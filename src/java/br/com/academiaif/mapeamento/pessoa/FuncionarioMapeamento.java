@@ -5,10 +5,36 @@
  */
 package br.com.academiaif.mapeamento.pessoa;
 
-/**
- *
- * @author Edis
- */
-public class FuncionarioMapeamento {
+import br.com.academiaif.mapeamento.outros.CargoMapeamento;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "funcionario")
+public class FuncionarioMapeamento extends PessoaMapeamento implements Serializable{
+    
+        private CargoMapeamento cargoMapeamento;
+    private int satisfacaoDoCliente;
+
+    public CargoMapeamento getCargoMapeamento() {
+        return cargoMapeamento;
+    }
+
+    public void setCargoMapeamento(CargoMapeamento cargoMapeamento) {
+        this.cargoMapeamento = cargoMapeamento;
+    }
+
+    public int getSatisfacaoDoCliente() {
+        return satisfacaoDoCliente;
+    }
+
+    public void setSatisfacaoDoCliente(int satisfacaoDoCliente) {
+        this.satisfacaoDoCliente = satisfacaoDoCliente;
+    }
+        
     
 }
+
